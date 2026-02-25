@@ -1,6 +1,6 @@
-import 'package:xtdespachos/features/config_http/domain/entities/http_config.dart';
-import 'package:xtdespachos/features/config_http/domain/repositories/config_http_repository.dart';
-import 'package:xtdespachos/features/config_http/infrastructure/datasources/config_http_local_datasource.dart';
+import 'package:wap_xcontrol/features/config_http/domain/entities/http_config.dart';
+import 'package:wap_xcontrol/features/config_http/domain/repositories/config_http_repository.dart';
+import 'package:wap_xcontrol/features/config_http/infrastructure/datasources/config_http_local_datasource.dart';
 
 class ConfigHttpRepositoryImpl implements ConfigHttpRepository {
   ConfigHttpRepositoryImpl(this._local);

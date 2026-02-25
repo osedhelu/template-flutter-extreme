@@ -1,6 +1,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
     <application
-        android:label="xtdespachos"
+        android:label="wap_xcontrol"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity

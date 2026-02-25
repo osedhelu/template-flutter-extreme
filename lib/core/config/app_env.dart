@@ -1,4 +1,4 @@
-import 'package:xtdespachos/features/config_http/domain/entities/http_config.dart';
+import 'package:wap_xcontrol/features/config_http/domain/entities/http_config.dart';
 
 /// Valores por defecto del servidor API (origen: old_proyect_android ConfiguracionHttpBL).
 ///

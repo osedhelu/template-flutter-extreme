@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:xtdespachos/core/theme/app_palette.dart';
+import 'package:wap_xcontrol/core/theme/app_palette.dart';
 
 ThemeData buildAppTheme() {
   const colorScheme = ColorScheme.light(

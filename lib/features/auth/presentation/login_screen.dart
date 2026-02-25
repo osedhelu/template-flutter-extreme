@@ -2,8 +2,8 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:xtdespachos/features/auth/application/providers/auth_providers.dart';
-import 'package:xtdespachos/features/config_http/presentation/config_http_screen.dart';
+import 'package:wap_xcontrol/features/auth/application/providers/auth_providers.dart';
+import 'package:wap_xcontrol/features/config_http/presentation/config_http_screen.dart';
 
 class LoginScreen extends ConsumerStatefulWidget {
   const LoginScreen({super.key});

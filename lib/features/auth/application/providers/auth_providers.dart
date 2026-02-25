@@ -1,12 +1,12 @@
 import 'package:dio/dio.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:xtdespachos/core/utils/api_error_message.dart';
-import 'package:xtdespachos/features/auth/domain/entities/user.dart';
-import 'package:xtdespachos/features/auth/domain/repositories/auth_repository.dart';
-import 'package:xtdespachos/features/auth/infrastructure/datasources/auth_local_datasource.dart';
-import 'package:xtdespachos/features/auth/infrastructure/repositories/auth_repository_impl.dart';
-import 'package:xtdespachos/features/config_http/application/providers/config_http_providers.dart';
-import 'package:xtdespachos/shared/application/preferences_provider.dart';
+import 'package:wap_xcontrol/core/utils/api_error_message.dart';
+import 'package:wap_xcontrol/features/auth/domain/entities/user.dart';
+import 'package:wap_xcontrol/features/auth/domain/repositories/auth_repository.dart';
+import 'package:wap_xcontrol/features/auth/infrastructure/datasources/auth_local_datasource.dart';
+import 'package:wap_xcontrol/features/auth/infrastructure/repositories/auth_repository_impl.dart';
+import 'package:wap_xcontrol/features/config_http/application/providers/config_http_providers.dart';
+import 'package:wap_xcontrol/shared/application/preferences_provider.dart';
 
 /// Cliente HTTP con baseUrl desde config_http (o valor por defecto).
 final dioProvider = FutureProvider<Dio>((ref) async {

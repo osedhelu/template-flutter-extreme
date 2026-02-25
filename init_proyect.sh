@@ -76,18 +76,18 @@ echo ""
 cd "$PROJECT_ROOT"
 
 # --- 1) Android: build.gradle.kts ---
-echo "[1/7] Android: build.gradle.kts (namespace, applicationId)"
+echo "[1/8] Android: build.gradle.kts (namespace, applicationId)"
 sed -i.bak "s|namespace = \"$OLD_PACKAGE\"|namespace = \"$NEW_PACKAGE\"|g" android/app/build.gradle.kts
 sed -i.bak "s|applicationId = \"$OLD_PACKAGE\"|applicationId = \"$NEW_PACKAGE\"|g" android/app/build.gradle.kts
 rm -f android/app/build.gradle.kts.bak
 
 # --- 2) Android: AndroidManifest.xml (label) ---
-echo "[2/7] Android: AndroidManifest.xml (android:label)"
+echo "[2/8] Android: AndroidManifest.xml (android:label)"
 sed -i.bak "s|android:label=\"$OLD_NAME\"|android:label=\"$NEW_NAME\"|g" android/app/src/main/AndroidManifest.xml
 rm -f android/app/src/main/AndroidManifest.xml.bak
 
 # --- 3) Android: MainActivity.kt (nueva ruta y package) ---
-echo "[3/7] Android: MainActivity.kt (nueva ruta de package)"
+echo "[3/8] Android: MainActivity.kt (nueva ruta de package)"
 KOTLIN_BASE="android/app/src/main/kotlin"
 NEW_KOTLIN_PATH="$KOTLIN_BASE/$(echo "$NEW_PACKAGE" | tr '.' '/')"
 mkdir -p "$NEW_KOTLIN_PATH"
@@ -106,14 +106,14 @@ if [[ -d "$OLD_KOTLIN_PATH" ]]; then
 fi
 
 # --- 4) iOS: project.pbxproj (PRODUCT_BUNDLE_IDENTIFIER) ---
-echo "[4/7] iOS: project.pbxproj (bundle identifier)"
+echo "[4/8] iOS: project.pbxproj (bundle identifier)"
 PBXPROJ="ios/Runner.xcodeproj/project.pbxproj"
 sed -i.bak "s|PRODUCT_BUNDLE_IDENTIFIER = $OLD_PACKAGE;|PRODUCT_BUNDLE_IDENTIFIER = $NEW_PACKAGE;|g" "$PBXPROJ"
 sed -i.bak "s|PRODUCT_BUNDLE_IDENTIFIER = $OLD_PACKAGE.RunnerTests;|PRODUCT_BUNDLE_IDENTIFIER = $NEW_PACKAGE.RunnerTests;|g" "$PBXPROJ"
 rm -f "$PBXPROJ.bak"
 
 # --- 5) iOS: Info.plist (CFBundleDisplayName, CFBundleName) ---
-echo "[5/7] iOS: Info.plist (nombre de la app)"
+echo "[5/8] iOS: Info.plist (nombre de la app)"
 # Capitalizar primera letra para display
 NEW_DISPLAY_NAME="$(echo "$NEW_NAME" | sed 's/^\(.\)/\U\1/')"
 INFO_PLIST="ios/Runner/Info.plist"
@@ -122,14 +122,25 @@ sed -i.bak "s|<string>$OLD_NAME</string>|<string>$NEW_NAME</string>|g" "$INFO_PL
 rm -f "$INFO_PLIST.bak"
 
 # --- 6) pubspec.yaml (name) ---
-echo "[6/7] pubspec.yaml (name)"
-sed -i.bak "s|^name: $OLD_NAME$|name: $NEW_NAME|g" pubspec.yaml
+echo "[6/8] pubspec.yaml (name)"
+sed -i.bak "s|^name: *.*|name: $NEW_NAME|" pubspec.yaml
 rm -f pubspec.yaml.bak
 
-# --- 7) Imports en lib/ (package:xtdespachos -> package:NEW_NAME) ---
-echo "[7/7] lib/: reemplazo de imports package:$OLD_NAME -> package:$NEW_NAME"
+# --- 7) Imports en lib/ (package:... -> package:NEW_NAME) ---
+echo "[7/8] lib/: reemplazo de imports package:$OLD_NAME -> package:$NEW_NAME"
 find lib -name "*.dart" -type f -exec sed -i.bak "s|package:$OLD_NAME/|package:$NEW_NAME/|g" {} \;
+# También reemplazar wap_xcontrol por si el template usa ese nombre en imports
+find lib -name "*.dart" -type f -exec sed -i.bak "s|package:wap_xcontrol/|package:$NEW_NAME/|g" {} \;
 find lib -name "*.dart.bak" -type f -delete
+
+# --- 8) scripts/create_feature_flutter.sh (DEFAULT_PACKAGE para nuevo proyecto) ---
+echo "[8/8] scripts/create_feature_flutter.sh (nombre del paquete por defecto)"
+CREATE_FEATURE_SCRIPT="scripts/create_feature_flutter.sh"
+if [[ -f "$CREATE_FEATURE_SCRIPT" ]]; then
+  sed -i.bak "s|DEFAULT_PACKAGE=\"wap_xcontrol\"|DEFAULT_PACKAGE=\"$NEW_NAME\"|g" "$CREATE_FEATURE_SCRIPT"
+  sed -i.bak "s|DEFAULT_PACKAGE=\"$OLD_NAME\"|DEFAULT_PACKAGE=\"$NEW_NAME\"|g" "$CREATE_FEATURE_SCRIPT"
+  rm -f "$CREATE_FEATURE_SCRIPT.bak"
+fi
 
 # --- Opcional: .vscode/launch.json ---
 if [[ -f ".vscode/launch.json" ]]; then

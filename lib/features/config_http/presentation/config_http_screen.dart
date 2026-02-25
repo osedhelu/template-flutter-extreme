@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:xtdespachos/core/config/app_env.dart';
-import 'package:xtdespachos/core/theme/app_palette.dart';
-import 'package:xtdespachos/features/config_http/domain/entities/http_config.dart';
-import 'package:xtdespachos/features/config_http/application/providers/config_http_providers.dart';
+import 'package:wap_xcontrol/core/config/app_env.dart';
+import 'package:wap_xcontrol/core/theme/app_palette.dart';
+import 'package:wap_xcontrol/features/config_http/domain/entities/http_config.dart';
+import 'package:wap_xcontrol/features/config_http/application/providers/config_http_providers.dart';
 
 class ConfigHttpScreen extends ConsumerStatefulWidget {
   const ConfigHttpScreen({super.key});

@@ -1,4 +1,4 @@
-import 'package:xtdespachos/features/auth/domain/entities/user.dart';
+import 'package:wap_xcontrol/features/auth/domain/entities/user.dart';
 
 abstract class AuthRepository {
   Future<User> login({

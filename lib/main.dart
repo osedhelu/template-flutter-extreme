@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:xtdespachos/core/router/app_router.dart';
-import 'package:xtdespachos/core/theme/app_theme.dart';
-import 'package:xtdespachos/features/auth/application/providers/auth_providers.dart';
+import 'package:wap_xcontrol/core/router/app_router.dart';
+import 'package:wap_xcontrol/core/theme/app_theme.dart';
+import 'package:wap_xcontrol/features/auth/application/providers/auth_providers.dart';
 
 void main() {
   runApp(

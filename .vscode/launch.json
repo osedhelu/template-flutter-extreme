@@ -2,18 +2,18 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "xtdespachos",
+            "name": "wap_xcontrol",
             "request": "launch",
             "type": "dart"
         },
         {
-            "name": "xtdespachos (profile mode)",
+            "name": "wap_xcontrol (profile mode)",
             "request": "launch",
             "type": "dart",
             "flutterMode": "profile"
         },
         {
-            "name": "xtdespachos (release mode)",
+            "name": "wap_xcontrol (release mode)",
             "request": "launch",
             "type": "dart",
             "flutterMode": "release"

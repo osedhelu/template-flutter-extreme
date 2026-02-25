@@ -1,7 +1,7 @@
 import 'dart:convert';
 
-import 'package:xtdespachos/features/auth/domain/entities/user.dart';
-import 'package:xtdespachos/shared/infrastructure/preferences_datasource.dart';
+import 'package:wap_xcontrol/features/auth/domain/entities/user.dart';
+import 'package:wap_xcontrol/shared/infrastructure/preferences_datasource.dart';
 
 class AuthLocalDataSource {
   AuthLocalDataSource(this._prefs);
