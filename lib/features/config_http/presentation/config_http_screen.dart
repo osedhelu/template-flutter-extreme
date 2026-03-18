@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:wap_xcontrol/core/config/app_env.dart';
-import 'package:wap_xcontrol/core/theme/app_palette.dart';
-import 'package:wap_xcontrol/features/config_http/domain/entities/http_config.dart';
-import 'package:wap_xcontrol/features/config_http/application/providers/config_http_providers.dart';
+import 'package:gestor_pqr/core/config/app_env.dart';
+import 'package:gestor_pqr/core/theme/app_palette.dart';
+import 'package:gestor_pqr/features/config_http/domain/entities/http_config.dart';
+import 'package:gestor_pqr/features/config_http/application/providers/config_http_providers.dart';
 
 class ConfigHttpScreen extends ConsumerStatefulWidget {
   const ConfigHttpScreen({super.key});
@@ -208,8 +208,8 @@ class _ConfigHttpScreenState extends ConsumerState<ConfigHttpScreen> {
                   padding: const EdgeInsets.all(12),
                   decoration: BoxDecoration(
                     color: _message!.startsWith('Error')
-                        ? colorScheme.errorContainer.withValues(alpha: 0.5)
-                        : colorScheme.primaryContainer.withValues(alpha: 0.5),
+                        ? colorScheme.errorContainer.withOpacity(0.5)
+                        : colorScheme.primaryContainer.withOpacity(0.5),
                     borderRadius: BorderRadius.circular(12),
                   ),
                   child: Text(

@@ -1,8 +1,8 @@
 import 'package:dio/dio.dart';
-import 'package:wap_xcontrol/features/auth/domain/entities/user.dart';
-import 'package:wap_xcontrol/features/auth/domain/repositories/auth_repository.dart';
-import 'package:wap_xcontrol/features/auth/infrastructure/datasources/auth_local_datasource.dart';
-import 'package:wap_xcontrol/features/auth/infrastructure/datasources/auth_remote_datasource.dart';
+import 'package:gestor_pqr/features/auth/domain/entities/user.dart';
+import 'package:gestor_pqr/features/auth/domain/repositories/auth_repository.dart';
+import 'package:gestor_pqr/features/auth/infrastructure/datasources/auth_local_datasource.dart';
+import 'package:gestor_pqr/features/auth/infrastructure/datasources/auth_remote_datasource.dart';
 
 /// Código de estado OK según backend (CommonsUtils.EST_OK).
 const _estOk = 200;

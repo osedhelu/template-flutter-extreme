@@ -2,8 +2,8 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:wap_xcontrol/features/auth/application/providers/auth_providers.dart';
-import 'package:wap_xcontrol/features/auth/presentation/login_screen.dart';
+import 'package:gestor_pqr/features/auth/application/providers/auth_providers.dart';
+import 'package:gestor_pqr/features/auth/presentation/login_screen.dart';
 
 class HomePlaceholderScreen extends StatelessWidget {
   const HomePlaceholderScreen({super.key});
@@ -88,7 +88,7 @@ class _RootRouterState extends ConsumerState<RootRouter> {
             child: BackdropFilter(
               filter: ImageFilter.blur(sigmaX: 6, sigmaY: 6),
               child: Container(
-                color: Colors.black.withValues(alpha: 0.2),
+                color: Colors.black.withOpacity(0.2),
                 child: const Center(
                   child: CircularProgressIndicator(
                     color: Colors.white,

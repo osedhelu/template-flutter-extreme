@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:wap_xcontrol/core/theme/app_palette.dart';
+import 'package:gestor_pqr/core/theme/app_palette.dart';
 
 ThemeData buildAppTheme() {
   const colorScheme = ColorScheme.light(
@@ -29,7 +29,6 @@ ThemeData buildAppTheme() {
     inverseSurface: AppPalette.onSurface,
     onInverseSurface: AppPalette.surface,
     inversePrimary: AppPalette.primaryContainerLight,
-    surfaceContainerHighest: AppPalette.surfaceContainerHighest,
   );
 
   const radius = 14.0;

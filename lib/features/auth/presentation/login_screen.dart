@@ -2,8 +2,8 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:wap_xcontrol/features/auth/application/providers/auth_providers.dart';
-import 'package:wap_xcontrol/features/config_http/presentation/config_http_screen.dart';
+import 'package:gestor_pqr/features/auth/application/providers/auth_providers.dart';
+import 'package:gestor_pqr/features/config_http/presentation/config_http_screen.dart';
 
 class LoginScreen extends ConsumerStatefulWidget {
   const LoginScreen({super.key});
@@ -82,7 +82,7 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
                               color: Colors.white,
                               shadows: [
                                 Shadow(
-                                  color: Colors.black.withValues(alpha: 0.4),
+                                  color: Colors.black.withOpacity(0.4),
                                   blurRadius: 8,
                                   offset: const Offset(0, 1),
                                 ),
@@ -94,10 +94,10 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
                             'Inicia sesión en tu cuenta',
                             textAlign: TextAlign.center,
                             style: theme.textTheme.bodyLarge?.copyWith(
-                              color: Colors.white.withValues(alpha: 0.95),
+                              color: Colors.white.withOpacity(0.95),
                               shadows: [
                                 Shadow(
-                                  color: Colors.black.withValues(alpha: 0.3),
+                                  color: Colors.black.withOpacity(0.3),
                                   blurRadius: 6,
                                   offset: const Offset(0, 1),
                                 ),
@@ -190,7 +190,7 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
                                     ),
                                     decoration: BoxDecoration(
                                       color: colorScheme.errorContainer
-                                          .withValues(alpha: 0.6),
+                                          .withOpacity(0.6),
                                       borderRadius: BorderRadius.circular(10),
                                     ),
                                     child: Row(
@@ -286,17 +286,17 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
       hintText: hint,
       suffixIcon: suffixIcon,
       filled: true,
-      fillColor: Colors.white.withValues(alpha: 0.25),
+      fillColor: Colors.white.withOpacity(0.25),
       border: OutlineInputBorder(
         borderRadius: BorderRadius.circular(14),
         borderSide: BorderSide(
-          color: colorScheme.outline.withValues(alpha: 0.3),
+          color: colorScheme.outline.withOpacity(0.3),
         ),
       ),
       enabledBorder: OutlineInputBorder(
         borderRadius: BorderRadius.circular(14),
         borderSide: BorderSide(
-          color: colorScheme.outline.withValues(alpha: 0.25),
+          color: colorScheme.outline.withOpacity(0.25),
         ),
       ),
       focusedBorder: OutlineInputBorder(
@@ -313,7 +313,7 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
         fontWeight: FontWeight.w500,
       ),
       hintStyle: TextStyle(
-        color: colorScheme.onSurfaceVariant.withValues(alpha: 0.8),
+        color: colorScheme.onSurfaceVariant.withOpacity(0.8),
       ),
     );
   }
@@ -337,14 +337,14 @@ class _LoginCard extends StatelessWidget {
           padding: const EdgeInsets.all(28),
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(radius),
-            color: colorScheme.surface.withValues(alpha: 0.35),
+            color: colorScheme.surface.withOpacity(0.35),
             border: Border.all(
-              color: Colors.white.withValues(alpha: 0.2),
+              color: Colors.white.withOpacity(0.2),
               width: 1,
             ),
             boxShadow: [
               BoxShadow(
-                color: Colors.black.withValues(alpha: 0.15),
+                color: Colors.black.withOpacity(0.15),
                 blurRadius: 24,
                 offset: const Offset(0, 8),
               ),

@@ -1,4 +1,4 @@
-import 'package:wap_xcontrol/features/config_http/domain/entities/http_config.dart';
+import 'package:gestor_pqr/features/config_http/domain/entities/http_config.dart';
 
 abstract class ConfigHttpRepository {
   Future<HttpConfig?> getConfig();

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:gestor_pqr/core/theme/app_palette.dart';
 
 /// Slider vertical: arrastrar hacia arriba aumenta el valor, hacia abajo lo disminuye.
 /// Altura por defecto 200; min/max/divisions igual que [Slider].
@@ -41,9 +42,9 @@ class VerticalSlider extends StatelessWidget {
         child: SliderTheme(
           data: SliderTheme.of(context).copyWith(
             activeTrackColor: activeColor ?? colorScheme.primary,
-            inactiveTrackColor: inactiveColor ?? colorScheme.surfaceContainerHighest,
+            inactiveTrackColor: inactiveColor ?? AppPalette.surfaceContainerHighest,
             thumbColor: activeColor ?? colorScheme.primary,
-            overlayColor: (activeColor ?? colorScheme.primary).withValues(alpha: 0.2),
+            overlayColor: (activeColor ?? colorScheme.primary).withOpacity(0.2),
           ),
           child: Slider(
             value: value.clamp(min, max),

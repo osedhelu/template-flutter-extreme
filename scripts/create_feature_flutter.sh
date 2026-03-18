@@ -23,7 +23,7 @@ LIB_PATH="$PROJECT_ROOT/lib"
 FEATURES_PATH="$LIB_PATH/features"
 
 # Nombre del paquete Flutter. Lo lee de pubspec.yaml; si falla, usa este valor (actualizado por init_proyect.sh).
-DEFAULT_PACKAGE="wap_xcontrol"
+DEFAULT_PACKAGE="gestor_pqr"
 
 # Obtener package name desde pubspec.yaml
 get_package_name() {

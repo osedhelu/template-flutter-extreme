@@ -1,7 +1,7 @@
 import 'dart:convert';
 
 import 'package:dio/dio.dart';
-import 'package:wap_xcontrol/core/config/app_env.dart';
+import 'package:gestor_pqr/core/config/app_env.dart';
 
 class AuthRemoteDataSource {
   AuthRemoteDataSource(this._dio);

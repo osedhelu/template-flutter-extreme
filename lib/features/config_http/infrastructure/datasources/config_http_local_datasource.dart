@@ -1,7 +1,7 @@
 import 'dart:convert';
 
-import 'package:wap_xcontrol/features/config_http/domain/entities/http_config.dart';
-import 'package:wap_xcontrol/shared/infrastructure/preferences_datasource.dart';
+import 'package:gestor_pqr/features/config_http/domain/entities/http_config.dart';
+import 'package:gestor_pqr/shared/infrastructure/preferences_datasource.dart';
 
 class ConfigHttpLocalDataSource {
   ConfigHttpLocalDataSource(this._prefs);
